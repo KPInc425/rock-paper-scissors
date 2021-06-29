@@ -198,6 +198,7 @@ function rpsGame() {
             console.log("Jarvis Score: " + computerScore)
         } else if (playerWins == 2) {
             console.log("Well a DRAW is a tie, so no one is taking this round...")
+            i -= i;
         } else {
             computerScore +=1;
             console.log("Jarvis takes this round!")
@@ -213,10 +214,12 @@ function rpsGame() {
                 console.log("Winner, Winner, Chicken Dinner!");
                 console.log("Player won with a score of " + playerScore);
                 console.log("Excellent work! You're the Best!")
+                console.log("GAME OVER");
             } else {
                 console.log("WASTED!");
                 console.log("Jarvis won with a score of " + computerScore);
                 console.log("Don't worry, you'll get'em next time!");
+                console.log("GAME OVER");
             }
         }else {
         // else 
