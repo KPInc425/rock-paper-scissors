@@ -1,0 +1,1 @@
+Rock, paper, scissors game against the computer. Created as an interactive console game for the time being.
