@@ -5,6 +5,71 @@ const SCISSORS = "SCISSORS";
 let playerSelection = "";
 let playerWins;
 
+// gameFunction 
+function rpsGame() {
+    console.log("Game Initialized!")
+    //     initialize roundCounter variable to 5 for 5 rounds
+    let roundCounter = 1;
+//     initialize scoreCounter for player, AI to 0
+    let playerScore = 0;
+    let computerScore = 0;
+//     iterate through 5 rounds   
+    for (let i = 0; i <= 5; i++) {
+        // each round 
+        // player makes choice
+        let playerSelection = userPlay();
+        // computer makes choice
+        let computerSelection = computerPlay();
+        // FOR TESTING PURPOSES
+        // computerSelection = ROCK;
+        
+//             run rpsRound for gameplay
+        let playerWins = rpsRound(playerSelection, computerSelection);
+//             add 1 to winners score count 
+        if (playerWins == 1) {
+            playerScore += 1;
+            // Notify player of won round
+            console.log("Player takes this round!")
+            console.log("Player Score: " + playerScore)
+            console.log("Jarvis Score: " + computerScore)
+        } else if (playerWins == 2) {
+            console.log("Well a DRAW is a tie, so no one is taking this round...")
+            i -= i;
+        } else {
+            computerScore +=1;
+            console.log("Jarvis takes this round!")
+            console.log("Jarvis Score: " + computerScore)
+            console.log("Player Score: " + playerScore)
+        }
+        // if either player has reached 3 
+        if (playerScore >= 3 || computerScore >= 3) {
+            // stop the rounds
+            i = 10;
+            // declare the winner
+            if (playerScore > computerScore) {
+                console.log("Winner, Winner, Chicken Dinner!");
+                console.log("Player won with a score of " + playerScore);
+                console.log("Excellent work! You're the Best!")
+                console.log("GAME OVER");
+            } else {
+                console.log("WASTED!");
+                console.log("Jarvis won with a score of " + computerScore);
+                console.log("Don't worry, you'll get'em next time!");
+                console.log("GAME OVER");
+            }
+        }else {
+        // else 
+            //announce end of round
+            console.log("That's the end of Round #" + roundCounter);
+            // add 1 to roundCounter
+            roundCounter += 1;
+            // continue to next round
+            console.log("Get ready for Round #" + roundCounter);
+            confirm("Are you ready for the next round?");
+        }
+    }
+}
+
 // computerPlay 
 function computerPlay() {
     // declare computerSelection variable
@@ -88,6 +153,43 @@ function userPlay() {
     return playerWins;
 }
 
+function showChoices(playerSelection, computerSelection) {
+    let pS = playerSelection;
+    let cS = computerSelection;
+    console.log("Player: " + pS + " || " + cS + " :Jarvis");
+}
+
+//evaluates selections to determine winner
+function evaluateSelections(playerSelection, computerSelection) {
+    // initialize selections
+    let pS = playerSelection;
+    let cS = computerSelection;
+    // evaluation of ROCK choice
+    if (pS === ROCK && cS === SCISSORS) {
+        // player wins
+        return playerWins = 1;
+    } else if (pS === ROCK && cS === PAPER) {
+        // player loses
+        return playerWins = 0;
+    }
+    // evaluation of PAPER choice
+    if (pS === PAPER && cS === ROCK) {
+        // player wins
+        return playerWins = 1;
+    } else if (pS === PAPER && cS === SCISSORS) {
+        // player loses
+        return playerWins = 0;
+    }
+    // evaluation of SCISSORS choice
+    if (pS === SCISSORS && cS === PAPER) {
+        // player wins
+        return playerWins = 1;
+    } else if (pS === SCISSORS && cS === ROCK) {
+        // player loses
+        return playerWins = 0;
+    }
+}
+
 //output different messages based on win/loss scenario
 function endScenario(playerWins, playerSelection, computerSelection) {
     let pW = playerWins;
@@ -130,106 +232,4 @@ function endScenario(playerWins, playerSelection, computerSelection) {
                 break;
         }
     } 
-}
-
-//evaluates selections to determine winner
-function evaluateSelections(playerSelection, computerSelection) {
-    // initialize selections
-    let pS = playerSelection;
-    let cS = computerSelection;
-    // evaluation of ROCK choice
-    if (pS === ROCK && cS === SCISSORS) {
-        // player wins
-        return playerWins = 1;
-    } else if (pS === ROCK && cS === PAPER) {
-        // player loses
-        return playerWins = 0;
-    }
-    // evaluation of PAPER choice
-    if (pS === PAPER && cS === ROCK) {
-        // player wins
-        return playerWins = 1;
-    } else if (pS === PAPER && cS === SCISSORS) {
-        // player loses
-        return playerWins = 0;
-    }
-    // evaluation of SCISSORS choice
-    if (pS === SCISSORS && cS === PAPER) {
-        // player wins
-        return playerWins = 1;
-    } else if (pS === SCISSORS && cS === ROCK) {
-        // player loses
-        return playerWins = 0;
-    }
-}
-
-function showChoices(playerSelection, computerSelection) {
-    let pS = playerSelection;
-    let cS = computerSelection;
-    console.log("Player: " + pS + " || " + cS + " :Jarvis");
-}
-
-// gameFunction 
-function rpsGame() {
-    console.log("Game Initialized!")
-    //     initialize roundCounter variable to 5 for 5 rounds
-    let roundCounter = 1;
-//     initialize scoreCounter for player, AI to 0
-    let playerScore = 0;
-    let computerScore = 0;
-//     iterate through 5 rounds   
-    for (let i = 0; i <= 5; i++) {
-        // each round 
-        // player makes choice
-        let playerSelection = userPlay();
-        // computer makes choice
-        let computerSelection = computerPlay();
-        // FOR TESTING PURPOSES
-        // computerSelection = ROCK;
-        
-//             run rpsRound for gameplay
-        let playerWins = rpsRound(playerSelection, computerSelection);
-//             add 1 to winners score count 
-        if (playerWins == 1) {
-            playerScore += 1;
-            // Notify player of won round
-            console.log("Player takes this round!")
-            console.log("Player Score: " + playerScore)
-            console.log("Jarvis Score: " + computerScore)
-        } else if (playerWins == 2) {
-            console.log("Well a DRAW is a tie, so no one is taking this round...")
-            i -= i;
-        } else {
-            computerScore +=1;
-            console.log("Jarvis takes this round!")
-            console.log("Jarvis Score: " + computerScore)
-            console.log("Player Score: " + playerScore)
-        }
-        // if either player has reached 3 
-        if (playerScore >= 3 || computerScore >= 3) {
-            // stop the rounds
-            i = 10;
-            // declare the winner
-            if (playerScore > computerScore) {
-                console.log("Winner, Winner, Chicken Dinner!");
-                console.log("Player won with a score of " + playerScore);
-                console.log("Excellent work! You're the Best!")
-                console.log("GAME OVER");
-            } else {
-                console.log("WASTED!");
-                console.log("Jarvis won with a score of " + computerScore);
-                console.log("Don't worry, you'll get'em next time!");
-                console.log("GAME OVER");
-            }
-        }else {
-        // else 
-            //announce end of round
-            console.log("That's the end of Round #" + roundCounter);
-            // add 1 to roundCounter
-            roundCounter += 1;
-            // continue to next round
-            console.log("Get ready for Round #" + roundCounter);
-            confirm("Are you ready for the next round?");
-        }
-    }
 }
