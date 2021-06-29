@@ -66,13 +66,7 @@ function userPlay() {
 }
 
 // rpsRound 
- function rpsRound() {
-    // player makes choice
-    let playerSelection = userPlay();
-    // computer makes choice
-    let computerSelection = computerPlay();
-        // FOR TESTING PURPOSES
-        // computerSelection = ROCK;
+ function rpsRound(playerSelection, computerSelection) {
     // display choices
     showChoices(playerSelection, computerSelection);    
     // if playerSelection AND computerSelection are EQUAL 
@@ -93,6 +87,7 @@ function userPlay() {
     //return console.log("Round Over! Good Round!");
     return playerWins;
 }
+
 //output different messages based on win/loss scenario
 function endScenario(playerWins, playerSelection, computerSelection) {
     let pW = playerWins;
@@ -185,8 +180,15 @@ function rpsGame() {
 //     iterate through 5 rounds   
     for (let i = 0; i <= 5; i++) {
         // each round 
+        // player makes choice
+        let playerSelection = userPlay();
+        // computer makes choice
+        let computerSelection = computerPlay();
+        // FOR TESTING PURPOSES
+        // computerSelection = ROCK;
+        
 //             run rpsRound for gameplay
-        let playerWins = rpsRound();
+        let playerWins = rpsRound(playerSelection, computerSelection);
 //             add 1 to winners score count 
         if (playerWins == 1) {
             playerScore += 1;
