@@ -1,15 +1,21 @@
 Rock, paper, scissors game against the computer. Created as an interactive console game for the time being.
 
-*UI update
-The player is able to play the game by clicking on buttons rather than typing their answer in a prompt.
+**UI Update
 
-First player to a score of 5 wins
---Game refreshes after win/lose 
-Each button will display the player selection and an img to represent said selection
---AI will then make a selection and display chosen img
-Evaluation, results, and End of Round statement are displayed after each selection
-Running Score always visible
+Now the player has some clickity klackity(Sound Effects coming soon!) buttons to push! The AI will make a selection once the player makes a selection. Selections will be displayed in both text and Img form. The evaluation will be done and displayed. 
 
-TODO
-Add sound effects to signify stages of play. 
-Create display to represent play (i.e. img of rock smashing scissors, etc)
+The outcome and winner of round will be displayed. Player will be alerted of the current round, and to prepare for the next round. 
+
+After either player or AI reaches a score of 5, a win/lose message is displayed and the game is refreshed.
+
+
+
+
+--TODO--
+Add Sound effects to isolate stage of round and button clicks
+Add accessability features (labels to displayed selections, button labels, etc)
+Add button for manual restart
+--remove alert and make end of game more smooth
+Add img display of action between selections (i.e. Rock smashes Scissor, etc)
+Add Ability to input your name for player name
+Highscores?
