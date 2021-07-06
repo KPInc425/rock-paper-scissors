@@ -1,0 +1,85 @@
+html {
+    background-color: black;
+}
+
+body {
+    font-family: "Schoolbell", Chalkduster, fantasy;
+}
+
+#mainContainer {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 5px;
+    min-height: 400px;
+}
+
+.columns {
+    text-align: center;
+    display: grid;
+}
+
+#btnContainer {
+    text-align: center;
+    padding: 20px;
+}
+
+#columnOne, #columnThree {
+    background-color: black;
+    border: 2px solid blue;
+    font-size: x-large;
+    margin: 5px 15px 0 15px;
+}
+
+#columnTwo {
+    background-color: black;
+    border: 2px solid green;
+    font-size: larger;
+    margin-top: 5px;
+}
+
+.labelContainer {
+    background-color: rgb(33, 33, 33);
+    border: 1px solid green;
+    color: rgb(0, 255, 21);
+    margin: 10px;
+    display: grid;
+    align-items: center;
+}
+
+.anchorItemBottom {
+    align-self: end;
+}
+
+.min100H {
+    min-height: 50px;
+}
+
+.imgContainer {
+    background-color: black;
+    border: 1px solid white;
+    margin: 10px;
+    align-self: end;
+    min-width: 64px;
+    min-height: 64px;
+}
+
+button {
+    border-radius: 50%;
+    width: 128px;
+    height: 128px;
+    font-size: 24px;
+    font-weight: bolder;
+    font-family: inherit;
+    margin: 0 10px 0 10px;
+    background-color: rgb(33, 33, 33);
+    color: rgb(0, 255, 21);
+}
+
+#selectionsContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.scoreLabel {
+    padding: 10px;
+}

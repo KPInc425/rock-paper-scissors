@@ -1,11 +1,57 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Rock, Paper, Scissors</title>
         <meta charset="UTF-8">
+        <title>
+            RPS-UI
+        </title>
+        <link rel="stylesheet" href="reset.css">
+        <link href="https://fonts.googleapis.com/css?family=Schoolbell&v1" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
     </head>
-
     <body>
+        <div id="mainContainer">
+            <div id="columnOne" class="columns">
+                <div id="playerNameLabel" class="labelContainer">
+                    <p>Player</p>
+                </div>
+                <div id="playerSelectionPic" class="imgContainer">
+                    <img src="img/pickOne.png" id="imgPlayerSelection"> 
+                </div>
+                <div id="playerScoreContainer" class="labelContainer anchorItemBottom">
+                    <p class="scoreLabel">SCORE</p>
+                    <p id="playerScoreLabel" class="scoreLabel">0</p>
+                </div>
+            </div>
+            <div id="columnTwo" class="columns">
+                <div id="selectionsContainer" class="labelContainer">
+                    <p id="playerSelection"></p> <p id="VS"></p> <p id="aiSelection"></p>
+                </div>
+                <div id="evaluationContainer" class="labelContainer">
+                    <p class="evalLabel"></p>
+                </div>
+                <div id="endOfRoundStatementContainer" class="labelContainer">
+                    <p id="endOfRoundStatementLabel"></p>
+                </div>
+                <div id="roundOutcomeContainer" class="labelContainer">
+                    <p id="roundOutcomeLabelOne"></p>
+                    <p id="roundOutcomeLabelTwo"></p>
+                </div>
+            </div>
+            <div id="columnThree" class="columns">
+                <div id="aiNameLabel" class="labelContainer">
+                    <p>Jarvis</p>
+                </div>
+                <div id="aiSelectionPic" class="imgContainer">
+                    <img src="img/pickOne.png" id="imgAISelection"> 
+                </div>
+                <div id="aiScoreContainer" class="labelContainer anchorItemBottom">
+                    <p class="scoreLabel">SCORE</p>
+                    <p id="aiScoreLabel" class="scoreLabel">0</p>
+                </div>
+            </div>
+        </div>
+        <div id="btnContainer"></div>
         <script src="rps.js"></script>
     </body>
 </html>
